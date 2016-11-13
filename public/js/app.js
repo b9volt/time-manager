@@ -26,6 +26,8 @@
 
       // CRUD LOGIC
       // ==============================
+
+      // ***ADD/CREATE***
       function addTodo(newTodo) {
 
         $http.post('/todos', newTodo)
@@ -39,9 +41,19 @@
           });
       }
 
+      // ***DELETE/DESTROY***
+      function deleteTodo(id) {
+          $http.delete(`/todos/${id}`)
+            .then(function(response) {
+              console.log(response);
+              self.todos = response.data.todos;
+            })
+        }
+
       // PUBLIC METHODS
       // ==============================
       this.startCreating = startCreating;
       this.addTodo = addTodo;
       this.reset = reset;
+      this.deleteTodo = deleteTodo;
 })})();
