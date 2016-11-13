@@ -17,6 +17,18 @@ router.get('/', function(req, res){
   })
 });
 
+// EDIT
+// ==============================
+router.get('/:todoId', function(req, res){
+  Todo.findOne({_id: req.params.todoId})
+    .then(function(todo){
+      res.json({todo: todo});
+    })
+    .catch(function(err){
+      res.json(500, `ERROR: ${err}`)
+    });
+});
+
 // CREATE/SHOW
 // ==============================
 router.post('/', function(req, res){
@@ -45,6 +57,27 @@ router.post('/', function(req, res){
   })
 });
 
+// UPDATE
+// ==============================
+router.put('/:todoId', function(req, res) {
+  var editedTodo;
+
+  Todo.update({_id: req.params.todoId}, req.body)
+    .then(function() {
+      return Todo.find({}).exec();
+    })
+    .then(function(todos) {
+      console.log('ALL TODOS>>>>', todos)
+
+      res.json({message: "succesfully updated", todos: todos})
+    })
+    .catch(function(err) {
+      res.json(400, err)
+    });
+})
+
+// DELETE
+// ==============================
 router.delete('/:todoId', function(req, res){
   var todos;
 
@@ -61,6 +94,5 @@ router.delete('/:todoId', function(req, res){
       res.json(400, err)
     });
 });
-
 
 module.exports = router;
