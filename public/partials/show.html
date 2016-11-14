@@ -1,0 +1,18 @@
+<div class="todos">
+  <div class="todo" ng-repeat="todo in main.todos">
+    <div>
+      <p>Todo: {{todo.description}}</p>
+      <p>Priority: {{todo.priority}}
+      <p>Complete?: {{todo.complete}}</p>
+      <p>Created at: {{todo.createdAt | date:'short' }}</p>
+      <div class="nav">
+        <button ng-click="main.setTodoToEdit(todo); main.startEditing()">Edit</button>
+        <button ng-click="main.deleteTodo(todo._id)">&#10006</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav" ng-hide="main.isCreating || main.isEditing">
+    <button ng-click="main.startCreating()">Add Todo!</button>
+</div>

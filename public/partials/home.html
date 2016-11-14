@@ -1,0 +1,11 @@
+<div class="home">
+  <h2 id="font1">Login</h2>
+  <form ng-submit="auth.login(userPass)">
+    <input ng-model="userPass.username" type="text" name="username" placeholder="username">
+    <input ng-model="userPass.password" type="password" name="password" placeholder="password">
+    <button type="submit">Log in</button>
+  </form>
+  <br>
+  <h2 id="font2">Not a member?</h2>
+  <button  class="btn btn-primary" ui-sref="register">Register</button>
+</div>

@@ -1,0 +1,9 @@
+<h2 id="font1">Done</h2>
+
+  <div id="frame">
+    <a class="note sticky1" ui-sref="show({item:item})" ng-repeat="todo in main.done">
+      <div class='pin'></div>
+      <div class='text'>&#9829; {{todo.description}}</div>
+      <div class='text'>{{todo.priority}}</div>
+    </a>
+  </div>

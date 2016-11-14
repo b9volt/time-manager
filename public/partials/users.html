@@ -1,0 +1,11 @@
+<h2 id="font1">{{main.user.username}}'s Todo List</h2>
+
+  <div id="frame">
+    <a class="note sticky1" ui-sref="show({todo:todo})" ng-repeat="todo in main.user.todoList">
+      <div class='pin'></div>
+      <div class='text'>{{todo.description}}</div>
+      <div class='text'>{{todo.priority}}</div>
+    </a>
+  </div>
+  <br>
+  <button class="btn btn-primary" id="addbtn" ui-sref="add">Add New Todo</button>
