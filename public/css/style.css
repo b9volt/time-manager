@@ -1,10 +1,49 @@
+html,
+body,
+
 @viewport{
   zoom: 1.0;
   width: device-width;
 }
 
+.cover {
+    height: 100%;
+}
+
+.cover {
+    background-image: url(http://i.imgur.com/iRCwjZx.jpg);
+    background-size: cover;
+    display: table;
+    width: 100%;
+    padding: 0 20%;
+    box-shadow: inset 0 0 100px #000;
+}
+
+.cover-text {
+    text-align: center;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    text-shadow: 2px 2px #222;
+}
+
+.cover-text h1 {
+    margin: 10;
+    font-size: 70px;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.cover-text h2 {
+    margin: 0;
+    font-size: 30px;
+    font-family: serif;
+    text-transform: lowercase;
+}
+
 header{
-  background-color: #222;
+  background-color: #6D1A36;
+  height: 6em;
   color: white;
   padding: 1em;
 }
@@ -84,13 +123,13 @@ a{
 }
 
 div#frame {
-    background-image: url(http://i.imgur.com/S6pAPZF.png);
-    background-repeat: no-repeat;
-    width: 800px;
-    height: 600px;
-    padding-top: 35px;
-    padding-left: 35px;
-    margin: auto;
+    background-image: url(http://i.imgur.com/iRCwjZx.jpg);
+    background-size: cover;
+    display: table;
+    width: 100%;
+    height: 100%;
+    padding: 0 20%;
+    box-shadow: inset 0 0 100px #000;
 }
 
 .note {
@@ -174,9 +213,10 @@ div#frame a:hover.note {
 }
 
 footer{
-	background-color: #222;
+	background-color: #6D1A36;
   color: white;
 	text-align: center;
+  height: 4em;
   padding: 1em;
   font-family: 'Lemonada', cursive;
   font-size: 16px;
