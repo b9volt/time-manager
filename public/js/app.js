@@ -12,7 +12,7 @@
       .then(function(response){
         console.log("HELPER RESPONSE >>>>", response.data.user);
         self.user = response.data.user;
-        self.items = response.data.user.todoList;
+        self.todos = response.data.user.todoList;
         self.done = response.data.user.done;
         console.log("current user status", self.user);
       })
@@ -21,7 +21,7 @@
       });
 
     function addTodo(newTodo){
-      //call add favorite function it favorite was selected
+      //call add done function if done was selected
       console.log("new todo", newTodo);
       $http.post('/user/add-todo', newTodo)
         .then(function(response){
@@ -71,7 +71,7 @@
         });
     };
 
-    function editItem(todo){
+    function editTodo(todo){
       console.log("CURRENT TODO TO EDIT >>>>>>>", self.currentTodo);
       console.log("EDITED TODO RESULTS >>>>>>>", todo);
       console.log("_id: ", self.currentTodo._id);

@@ -195,7 +195,7 @@ footer{
   float:right;
   margin-top: 72px;
 }*/
-
+/*
 .todos {
   display: flex;
   justify-content: space-between;
@@ -218,17 +218,17 @@ p {
 
 .nav {
   text-align: center;
-}
+}*/
 
 /*Skeleton*/
-label {
+/*label {
   display: block;
   margin-bottom: .5rem;
   font-weight: 600;
-}
+}*/
 
 /*Skeleton*/
-input {
+/*input {
   height: 38px;
   padding: 6px 10px;
   background-color: #fff;
@@ -236,9 +236,9 @@ input {
   border-radius: 4px;
   box-shadow: none;
   box-sizing: border-box;
-}
+}*/
 /*Skeleton*/
-button {
+/*button {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
@@ -261,4 +261,4 @@ button {
 form {
   text-align: center;
   margin-top: 40px;
-}
+}*/

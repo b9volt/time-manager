@@ -37,7 +37,7 @@ router.post('/add-todo', function(req, res){
 });
 
 // Adding a new favorite item
-router.post('/done-todo', function(req, res){
+router.post('/done', function(req, res){
   console.log("new todo", req.body);
   User.findOne({
     username: req.user.username

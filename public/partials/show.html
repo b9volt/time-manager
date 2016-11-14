@@ -1,4 +1,15 @@
-<div class="todos">
+<div class="home" ng-init="main.getImage(main.currentTodo.description)">
+  <h2 id="font1">{{main.currentTodo.descrition}}</h2>
+  <div>
+    <label ng-show="main.currentTodo.priority">Priority: {{main.currentTodo.priority}}</label><br>
+  </div>
+  <button ui-sref="edit({todo: main.currentTodo})" ng-click="main.setTodoToEdit(main.currentTodo)" name="Edit">EDIT</button>
+  <button ng-click="main.deleteTodo()" name="Delete">DELETE</button>
+  <button ng-click="main.addDone(main.currentTodo)" name="done">DONE</button>
+  <button ng-click="main.notDone()" name="Favorite">NOT DONE</button>
+</div>
+
+<!-- <div class="todos">
   <div class="todo" ng-repeat="todo in main.todos">
     <div>
       <p>Todo: {{todo.description}}</p>
@@ -15,4 +26,4 @@
 
 <div class="nav" ng-hide="main.isCreating || main.isEditing">
     <button ng-click="main.startCreating()">Add Todo!</button>
-</div>
+</div> -->
