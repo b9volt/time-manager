@@ -25,15 +25,15 @@
     controller: 'MainCtrl',
     controllerAs: 'main'
   })
-  .state('show', {
-    url: '/show',
-    params: {
-      item: null
-    },
-    templateUrl: "/partials/show.html",
-    controller: 'MainCtrl',
-    controllerAs: 'main'
-  })
+  // .state('show', {
+  //   url: '/show',
+  //   params: {
+  //     item: null
+  //   },
+  //   templateUrl: "/partials/show.html",
+  //   controller: 'MainCtrl',
+  //   controllerAs: 'main'
+  // })
   .state('edit', {
     url: '/edit',
     params: {

@@ -1,9 +1,10 @@
 <h2 id="font1">{{main.user.username}}'s Done List
 
   <div class="cover">
-    <a class="note sticky1" ui-sref="show({done:done})" ng-repeat="done in main.user.doneList">
+    <a class="note sticky1" ui-sref="show({todo:todo})" ng-repeat="todo in main.user.todoList">
       <div class='text'>{{todo.description}}</div>
       <div class='text'>Priority: {{todo.priority}}</div>
+      <div class='text'>Done: {{todo.done}}</div>
     </a>
   </div>
   <br>
