@@ -1,8 +1,8 @@
 
-//function finds the index of an item in the grocerylist and returns it
+//function finds the index of an item in the todoList and returns it
 var findTodoIndex = function(id, todo){
   console.log("TODO ID", id);
-  for(var i = 0; i < list.length; i++){
+  for(var i = 0; i < todo.length; i++){
     if(todo[i]._id == id){
       var index = i;
     }

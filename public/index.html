@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Time Manager</title>
-    <link href="https://fonts.googleapis.com/css?family=The+Girl+Next+Door|Bungee+Inline|Montserrat:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Handlee" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <script src="js/app.js"></script>
@@ -15,16 +15,13 @@
   <body ng-controller="AuthCtrl as auth">
     <div>
       <header>
-
-            <nav ng-show="auth.isLoggedIn"><!--ng-show="auth.isLoggedIn"-->
-              <button ui-sref-active="active" ui-sref="home">Home</button>
-              <span class="divider">|</span>
-              <button ui-sref-active="active" ui-sref="user">Todo</button>
-              <span class="divider">|</span>
-              <button ui-sref-active="active" ui-sref="done">Done</button>
-              <span class="divider">|</span>
-              <button ng-click="auth.logout()">Logout</button >
-            </nav>
+        <nav ng-show="auth.isLoggedIn">
+          <button ui-sref-active="active" ui-sref="user">Todo</button>
+          <span class="divider">|</span>
+          <button ui-sref-active="active" ui-sref="done">Done</button>
+          <span class="divider">|</span>
+          <button ng-click="auth.logout()">Logout</button >
+        </nav>
       </header>
       <main ui-view></main>
     </div>

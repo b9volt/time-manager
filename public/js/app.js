@@ -33,7 +33,7 @@
         });
     };
 
-    function addDone(item){
+    function addDone(todo){
       console.log("new done", todo);
       $http.post('/user/done-todo', todo)
         .then(function(response){
@@ -45,10 +45,9 @@
         });
     };
 
-    function deleteTodo(){
-      console.log("CURRENT TODO TO DELETE >>>>>>>", self.currentTodo);
-      console.log("_id: ", self.currentTodo._id);
-      $http.delete(`/user/delete/${self.currentTodo._id}`)
+    function deleteTodo(id){
+      console.log("CURRENT TODO TO DELETE >>>>>>>", id);
+      $http.delete('/user/delete/' + self.user._id + '/' + id)
         .then(function(response){
           console.log("TODO HAS BEEN DELETED FROM USER >>>>>>>>", response.data);
           $state.go('user', {url: '/user'});

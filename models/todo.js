@@ -5,8 +5,6 @@ var TodoSchema = new Schema({
   description: String,
   priority: Number,
   done: Boolean,
-  createdAt: Date,
-  updatedAt: Date
 });
 
 

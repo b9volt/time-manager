@@ -1,29 +1,34 @@
-<div class="home" ng-init="main.getImage(main.currentTodo.description)">
-  <h2 id="font1">{{main.currentTodo.descrition}}</h2>
-  <div>
-    <label ng-show="main.currentTodo.priority">Priority: {{main.currentTodo.priority}}</label><br>
+  <h2 id="font1">SHOW</h2>
+
+  <div class="cover">
+    <a class="note sticky1" ui-sref="edit({todo:todo})" ng-repeat="todo in main.show.todo">
+      <div class='text'>{{todo.description}}</div>
+      <div class='text'>Priority: {{todo.priority}}</div>
+      <div class='text'>Done: {{todo.done}}</div>
+    </a>
   </div>
+
+
+  <!-- <div>
+    <label ng-show="main.currentTodo.priority">Priority: {{main.currentTodo.priority}}</label><br>
+  </div> -->
   <button ui-sref="edit({todo: main.currentTodo})" ng-click="main.setTodoToEdit(main.currentTodo)" name="Edit">EDIT</button>
-  <button ng-click="main.deleteTodo()" name="Delete">DELETE</button>
+  <button ng-click="main.deleteTodo( todo._id)" name="Delete">DELETE</button>
   <button ng-click="main.addDone(main.currentTodo)" name="done">DONE</button>
   <button ng-click="main.notDone()" name="Favorite">NOT DONE</button>
 </div>
 
-<!-- <div class="todos">
-  <div class="todo" ng-repeat="todo in main.todos">
+<div class="home" ng-repeat="todo in main.todos">
+  <h2 id="font1">{{main.currentTodo.todo}}</h2>
     <div>
-      <p>Todo: {{todo.description}}</p>
-      <p>Priority: {{todo.priority}}
-      <p>Complete?: {{todo.complete}}</p>
-      <p>Created at: {{todo.createdAt | date:'short' }}</p>
+      <form>
+        <input type="text" ng-model="todo.description">
+          <input type="number" ng-model="todo.priority">
+      <input type="text" ng-model="todo.done">
       <div class="nav">
-        <button ng-click="main.setTodoToEdit(todo); main.startEditing()">Edit</button>
-        <button ng-click="main.deleteTodo(todo._id)">&#10006</button>
+        <button ng-click=" main.startEditing(todo)">Edit</button>
+        <button ng-click="main.deleteTodo( todo._id)">&#10006</button>
       </div>
+    </form>
     </div>
-  </div>
 </div>
-
-<div class="nav" ng-hide="main.isCreating || main.isEditing">
-    <button ng-click="main.startCreating()">Add Todo!</button>
-</div> -->

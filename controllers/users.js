@@ -6,11 +6,11 @@ var router = express.Router();
 //EXTERNAL FILES
 //======================================
 var User = require('../models/user');
-var Item = require('../models/todo').model;
+var Todo = require('../models/todo').model;
 var findTodoIndex = require('../public/js/logic.js');
 
 
-//Adding a new todo
+// Adding a new todo
 router.post('/add-todo', function(req, res){
   console.log("new todo", req.body);
   User.findOne({
@@ -24,8 +24,6 @@ router.post('/add-todo', function(req, res){
       description: req.body.description,
       priority: req.body.priority,
       done: req.body.done,
-      createdAt: req.body.createdAt,
-      updatedAt: req.body.updatedAt
     });
     user.save();
     res.json(user);
@@ -36,39 +34,40 @@ router.post('/add-todo', function(req, res){
   });
 });
 
-// Adding a new favorite item
-router.post('/done', function(req, res){
-  console.log("new todo", req.body);
-  User.findOne({
-    username: req.user.username
-  })
-  .then(function(user){
-    user.done.push({
-      description: req.body.description,
-      priority: req.body.priority,
-      done: req.body.done,
-      createdAt: req.body.createdAt,
-      updatedAt: req.body.updatedAt
-    });
-    user.save();
-    res.json(user);
-    console.log(user);
-  })
-  .catch(function(err){
-    console.log(err);
-  });
-});
+// // Adding a done todo
+// router.post('/done', function(req, res){
+//   console.log("new todo", req.body);
+//   User.findOne({
+//     username: req.user.username
+//   })
+//   .then(function(user){
+//     user.done.push({
+//       description: req.body.description,
+//       priority: req.body.priority,
+//       done: req.body.done,
+//     });
+//     user.save();
+//     res.json(user);
+//     console.log(user);
+//   })
+//   .catch(function(err){
+//     console.log(err);
+//   });
+// });
 
-//Edit an existing item
-router.put('/edit-todo', function(req, res){
-  User.findOne({
-    username:  req.user.username
+// Edit an existing todo
+router.put('/edit/:userid/:id', function(req, res){
+  var userId = req.params.userid;
+  var todoId = req.params.id;
+   User.findOne({
+     _id: userId
   }, function(err, user){
-    console.log("CURRENT TODO ID", req.body.currentTodoId);
-    //function to find Todo in todoList
-    var todoIndex = findTodoIndex(req.body.currentTodoId, user.todoList);
-    console.log("THIS IS THE EDITED TODO RESULTS", req.body.editedTodo);
+
+    var todoIndex = findTodoIndex(todoId, user.todoList);
     user.todoList[todoIndex] = req.body.editedTodo;
+    user.todoList[todoIndex].description = req.body.todo.description;
+    user.todoList[todoIndex].priority = req.body.todo.priority;
+    user.todoList[todoIndex].done = req.body.todo.done;
 
     user.save(function(err){
       if(err) console.log(err);
@@ -78,16 +77,17 @@ router.put('/edit-todo', function(req, res){
   });
 });
 
-//deleting an item
-router.delete('/delete/:id', function(req, res){
+// Deleting a todo
+router.delete('/delete/:userid/:id', function(req, res){
+ var userId = req.params.userid;
+ var todoId = req.params.id;
   User.findOne({
-    username: req.user.username
+    _id: userId
   }, function(err, user){
-    console.log("CURRENT TODO ID", req.params.id);
-    var todoIndex = findTodoIndex(req.params.id, user.todoList);
-    console.log("TODO INDEX", todoIndex);
-    user.todoList.splice(todoIndex, 1);
 
+    var todoIndex = findTodoIndex(todoId, user.todoList);
+    user.todoList.splice(todoIndex, 1);
+// user.todoList[todoIndex].description = req.body.todo.description
     user.save(function(err){
       if(err) console.log(err);
       console.log("Todo deleted from User");
@@ -95,25 +95,26 @@ router.delete('/delete/:id', function(req, res){
 
     res.json(user);
   });
+
 });
 
-// Removing a favorite item
-router.delete('/done-todo/:id', function(req, res){
-  User.findOne({
-    username: req.user.username
-  }, function(err, user){
-    console.log("CURRENT DONE ITEM ID", req.params.id);
-    var todoIndex = findTodoIndex(req.params.id, user.done);
-    console.log("TODO INDEX", todoIndex);
-    user.done.splice(todoIndex, 1);
-
-    user.save(function(err){
-      if(err) console.log(err);
-      console.log("Todo deleted from Done");
-    });
-
-    res.json(user);
-  });
-});
+// // Deleting a done todo
+// router.delete('/done-todo/:id', function(req, res){
+//   User.findOne({
+//     username: req.user.username
+//   }, function(err, user){
+//     console.log("CURRENT DONE ITEM ID", req.params.id);
+//     var todoIndex = findTodoIndex(req.params.id, user.done);
+//     console.log("TODO INDEX", todoIndex);
+//     user.done.splice(todoIndex, 1);
+//
+//     user.save(function(err){
+//       if(err) console.log(err);
+//       console.log("Todo deleted from Done");
+//     });
+//
+//     res.json(user);
+//   });
+// });
 
 module.exports = router;
