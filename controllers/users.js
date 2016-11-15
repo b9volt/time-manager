@@ -62,12 +62,11 @@ router.put('/edit/:userid/:id', function(req, res){
    User.findOne({
      _id: userId
   }, function(err, user){
-
     var todoIndex = findTodoIndex(todoId, user.todoList);
-    user.todoList[todoIndex] = req.body.editedTodo;
-    user.todoList[todoIndex].description = req.body.todo.description;
-    user.todoList[todoIndex].priority = req.body.todo.priority;
-    user.todoList[todoIndex].done = req.body.todo.done;
+
+    user.todoList[todoIndex].description = req.body.description;
+    user.todoList[todoIndex].priority = req.body.priority;
+    user.todoList[todoIndex].done = req.body.done;
 
     user.save(function(err){
       if(err) console.log(err);

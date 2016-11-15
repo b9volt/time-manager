@@ -70,9 +70,9 @@
         });
     };
 
-    function editTodo(id){
-      console.log("CURRENT TODO TO EDIT >>>>>>>", id);
-      $http.put('/user/edit/' + self.user._id + '/' + id)
+    function editTodo(todo){
+      console.log("CURRENT TODO TO EDIT >>>>>>>", todo._id);
+      $http.put('/user/edit/' + self.user._id + '/' + todo._id, todo)
         .then(function(response){
           console.log( "TODO HAS BEEN EDITED BY USER >>>>>>>>", response.data);
           $state.go('user', {url: '/user'});
