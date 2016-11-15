@@ -98,8 +98,8 @@ button, .submit-button{
 
 .home{
   text-align: center;
-  padding-top: 5em;
   text-transform:capitalize;
+  margin: 5em 0;
 }
 
 .user{
@@ -113,6 +113,10 @@ button, .submit-button{
     width: 150px;
     float: left;
     margin: 5px;
+}
+
+.list:hover {
+  color: #999;
 }
 
 .text {
@@ -132,10 +136,10 @@ footer{
   color: white;
 	text-align: center;
   height: 4em;
-  padding: 1em;
-  font-family: 'Lemonada', cursive;
-  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
   position: fixed;
+  /*margin-top: 1em;*/
   right: 0;
   bottom: 0;
   left: 0;

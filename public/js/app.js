@@ -70,16 +70,11 @@
         });
     };
 
-    function editTodo(todo){
-      console.log("CURRENT TODO TO EDIT >>>>>>>", self.currentTodo);
-      console.log("EDITED TODO RESULTS >>>>>>>", todo);
-      console.log("_id: ", self.currentTodo._id);
-      $http.put('/user/edit-todo', {
-          currentTodoId: self.currentTodo._id,
-          editedTodo: todo
-        })
+    function editTodo(id){
+      console.log("CURRENT TODO TO EDIT >>>>>>>", id);
+      $http.put('/user/edit/' + self.user._id + '/' + id)
         .then(function(response){
-          console.log(response.data);
+          console.log( "TODO HAS BEEN EDITED BY USER >>>>>>>>", response.data);
           $state.go('user', {url: '/user'});
         })
         .catch(function(err){
