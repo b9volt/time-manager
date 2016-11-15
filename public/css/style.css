@@ -52,23 +52,23 @@ nav{
 }
 
 nav > button{
-  color: #C0E0DE;
+  color: #eee;
   background-color: none;
   background: none;
   border: none;
 }
 
 .divider{
-  color: #C0E0DE;
+  color: #eee;
 }
 
 nav > button:focus{
   outline:0;
-  color: #3C474B;
+  color: #999;
 }
 
 nav > button:hover{
-  color: #3C474B;
+  color: #999;
 }
 
 h2{
@@ -87,22 +87,13 @@ button, .submit-button{
     border-radius: 4px;
 }
 
-a{
+#todo{
+  text-decoration: none;
   font-size: 18px;
 }
 
-#addbtn{
-  height: 3em;
-  position: absolute;
-  right: 35px;
-  top: 209px;
-}
-
-#list{
-  list-style-type: none;
-  /*float: left;
-  padding: 1em;
-  text-align: center;*/
+#todo:hover{
+  color: #999;
 }
 
 .home{
@@ -118,25 +109,10 @@ a{
   justify-content:space-around;
 }
 
-/*div#frame {
-    background-image: url(http://i.imgur.com/iRCwjZx.jpg);
-    background-size: cover;
-    display: table;
-    width: 100%;
-    height: 100%;
-    padding: 0% 20%;
-    box-shadow: inset 0 0 100px #000;
-}*/
-
-.note {
-    width: 160px;
-    height: 100px;
-    /*box-shadow: 0 3px 6px rgba(0,0,0,.25);
-    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);*/
-    /*-moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);*/
+.list {
+    width: 150px;
     float: left;
     margin: 5px;
-    /*border: 1px solid rgba(0,0,0,.25);*/
 }
 
 .text {
@@ -145,13 +121,14 @@ a{
     color: white;
 }
 
+
 .done-true {
   text-decoration: line-through;
   color: grey;
 }
 
 footer{
-	background: #162521;
+	background: #222;
   color: white;
 	text-align: center;
   height: 4em;
@@ -174,79 +151,4 @@ footer{
     section {
         padding: 20px;
     }
-
 }
-
-/*nav{
-  background-color: #222;
-  font-size: 24px;
-  float:right;
-  margin-top: 72px;
-}*/
-/*
-.todos {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.todo {
-  margin: 10px;
-  color: #555;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
-  border: 1px solid #DDD;
-}
-p {
-  margin: 0px
-}
-
-.nav {
-  text-align: center;
-}*/
-
-/*Skeleton*/
-/*label {
-  display: block;
-  margin-bottom: .5rem;
-  font-weight: 600;
-}*/
-
-/*Skeleton*/
-/*input {
-  height: 38px;
-  padding: 6px 10px;
-  background-color: #fff;
-  border: 1px solid #D1D1D1;
-  border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box;
-}*/
-/*Skeleton*/
-/*button {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  text-align: center;
-  color: #555;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #bbb;
-  cursor: pointer;
-  box-sizing: border-box
-}
-
-form {
-  text-align: center;
-  margin-top: 40px;
-}*/
