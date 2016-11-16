@@ -32,5 +32,8 @@
     "passport-local-mongoose": "^4.0.0",
     "pry": "^0.6.5",
     "pryjs": "^1.0.3"
+  },
+  "engines": {
+    "node": "v6.4.0"
   }
 }

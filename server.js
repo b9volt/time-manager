@@ -25,7 +25,7 @@ var HelperController = require('./controllers/helpers.js');
 //DATABASE CONNECTION
 //=================================
 var db = mongoose.connection;
-var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/time-manager';
+var mongoURI = process.env.MONGODB_URI || 'mongodb://heroku_jjf8lkf4:vacq2n42mg8hpjt0thuhto4nas@ds051893.mlab.com:51893/heroku_jjf8lkf4';
 mongoose.connect(mongoURI);
 
 // MIDDLEWARE / CONFIGURATION
@@ -57,13 +57,6 @@ passport.deserializeUser(User.deserializeUser());
 //=================================
 app.use("/user", UsersController);
 app.use("/helper", HelperController);
-
-
-//USER HOME REGISTER
-//=================================
-app.get('/', function(req, res){
-    res.render('index');
-});
 
 //USER HOME REGISTER
 //=================================
