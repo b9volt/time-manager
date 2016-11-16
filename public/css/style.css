@@ -92,7 +92,7 @@ h2, #font2 {
 }*/
 
 #edit {
-  text-align: center;
+  float: left;
   margin: 3%;
   padding-bottom: 3%;
   display: inline-block;
