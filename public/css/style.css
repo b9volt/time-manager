@@ -92,9 +92,10 @@ h2, #font2 {
 }*/
 
 #edit {
-  float: left;
+  text-align: center;
   margin: 3%;
   padding-bottom: 3%;
+  display: inline-block;
 }
 
 .list {
