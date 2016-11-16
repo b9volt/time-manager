@@ -1,12 +1,12 @@
-<div class="home" ng-repeat="todo in main.user.todoList">
+<div class="home" id="edit" ng-repeat="todo in main.todos">
   <h2 id="font1">EDIT</h2>
-  <form>
-    <input ng-model="todo.description" name='todo.description' type="text" value="todo" placeholder="todo"><br><br>
+  <form ng-submit="main.addTodo(newTodo)" method="put">
+    <input ng-model="todo.description" type="text" name="description" value="todo" placeholder="todo"><br><br>
     <label for="priority">Priority 1-3 </label><br>
     <input ng-model="todo.priority" type="number" min="1" max="3" name="priority" value="1" ng-model="todo.priority"><br><br>
     <label for="done">Done?</label>
     <input type="checkbox" ng-model="todo.done" value="boolean" checked><br><br>
     <button class="btn btn-default" ui-sref="user" ng-click="main.editTodo(todo)">Edit</button>
-    <button class="btn btn-danger" ui-sref="user" ng-click="main.deleteTodo(todo._id)">Delete</button>
+    <button class="btn btn-danger" ui-sref="user" ng-click="main.deleteTodo( todo._id)">Delete</button>
   </form>
 </div>

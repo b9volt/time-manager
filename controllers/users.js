@@ -55,6 +55,18 @@ router.post('/add-todo', function(req, res){
 //   });
 // });
 
+// router.get('/edit/:userid/:id', function(req, res){
+//   var userId = req.params.userid;
+//   var todoId = req.params.id;
+//    User.findOne({
+//      _id: userId
+//   }, function(err, user){
+//     var todoIndex = findTodoIndex(todoId, user.todoList);
+//     var todo = user.todoList[todoIndex]
+//     res.render('edit.html', {todo: todo});
+//   });
+// });
+
 // Edit an existing todo
 router.put('/edit/:userid/:id', function(req, res){
   var userId = req.params.userid;

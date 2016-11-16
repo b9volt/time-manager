@@ -15,6 +15,7 @@ var port  = process.env.PORT || 3000;
 var app = express();
 var path    = require('path');
 
+
 //EXTERNAL FILES
 //=================================
 var User = require('./models/user.js');
@@ -47,7 +48,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
 //To be used when user is created ********
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());

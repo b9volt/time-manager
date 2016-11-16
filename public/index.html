@@ -15,16 +15,16 @@
   <body ng-controller="AuthCtrl as auth">
     <div>
       <header>
-        <nav ng-show="auth.isLoggedIn">
-          <button ui-sref-active="active" ui-sref="user">Todo</button>
+        <nav>
+          <button ui-sref-active="active" ui-sref="user">List</button>
           <span class="divider">|</span>
-          <button ui-sref-active="active" ui-sref="done">Done</button>
+          <button ui-sref-active="active" ui-sref="edit">Edit</button>
           <span class="divider">|</span>
           <button ng-click="auth.logout()">Logout</button >
         </nav>
       </header>
       <main ui-view></main>
     </div>
-    <footer>&copy; Brad Volts</a></footer>
+    <footer>&copy; Brad Volts</footer>
   </body>
 </html>

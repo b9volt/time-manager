@@ -33,17 +33,17 @@
         });
     };
 
-    function addDone(todo){
-      console.log("new done", todo);
-      $http.post('/user/done-todo', todo)
-        .then(function(response){
-          console.log("TODO HAS BEEN CHECKED DONE BY USER >>>>>>>", response.data.todoList);
-          $state.go('user', {url: '/user'});
-        })
-        .catch(function(err){
-          console.log(err);
-        });
-    };
+    // function addDone(todo){
+    //   console.log("new done", todo);
+    //   $http.post('/user/done-todo', todo)
+    //     .then(function(response){
+    //       console.log("TODO HAS BEEN CHECKED DONE BY USER >>>>>>>", response.data.todoList);
+    //       $state.go('user', {url: '/user'});
+    //     })
+    //     .catch(function(err){
+    //       console.log(err);
+    //     });
+    // };
 
     function deleteTodo(id){
       console.log("CURRENT TODO TO DELETE >>>>>>>", id);
@@ -57,18 +57,18 @@
         });
     };
 
-    function notDone(){
-      console.log("CURRENT ITEM TO TODO >>>>>>>", self.currentTodo);
-      console.log("_id: ", self.currentTodo._id);
-      $http.delete(`/user/notDone-todo/${self.currentTodo._id}`)
-        .then(function(response){
-          console.log("TODO IS NOT DONE BY USER >>>>>>>>", response.data);
-          $state.go('user', {url: '/user'});
-        })
-        .catch(function(err){
-          console.log(err);
-        });
-    };
+    // function notDone(){
+    //   console.log("CURRENT ITEM TO TODO >>>>>>>", self.currentTodo);
+    //   console.log("_id: ", self.currentTodo._id);
+    //   $http.delete(`/user/notDone-todo/${self.currentTodo._id}`)
+    //     .then(function(response){
+    //       console.log("TODO IS NOT DONE BY USER >>>>>>>>", response.data);
+    //       $state.go('user', {url: '/user'});
+    //     })
+    //     .catch(function(err){
+    //       console.log(err);
+    //     });
+    // };
 
     function editTodo(todo){
       console.log("CURRENT TODO TO EDIT >>>>>>>", todo._id);
@@ -85,8 +85,8 @@
     this.addTodo = addTodo;
     this.deleteTodo = deleteTodo;
     this.editTodo = editTodo;
-    this.addDone = addDone;
-    this.notDone = notDone;
+    // this.addDone = addDone;
+    // this.notDone = notDone;
     // this.getImage = getImage;
 
   });
