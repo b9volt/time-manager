@@ -34,27 +34,6 @@ router.post('/add-todo', function(req, res){
   });
 });
 
-// // Adding a done todo
-// router.post('/done', function(req, res){
-//   console.log("new todo", req.body);
-//   User.findOne({
-//     username: req.user.username
-//   })
-//   .then(function(user){
-//     user.done.push({
-//       description: req.body.description,
-//       priority: req.body.priority,
-//       done: req.body.done,
-//     });
-//     user.save();
-//     res.json(user);
-//     console.log(user);
-//   })
-//   .catch(function(err){
-//     console.log(err);
-//   });
-// });
-
 // router.get('/edit/:userid/:id', function(req, res){
 //   var userId = req.params.userid;
 //   var todoId = req.params.id;
@@ -63,7 +42,7 @@ router.post('/add-todo', function(req, res){
 //   }, function(err, user){
 //     var todoIndex = findTodoIndex(todoId, user.todoList);
 //     var todo = user.todoList[todoIndex]
-//     res.render('edit.html', {todo: todo});
+//     res.render('edit', {todo: todo});
 //   });
 // });
 
@@ -81,10 +60,12 @@ router.put('/edit/:userid/:id', function(req, res){
     user.todoList[todoIndex].done = req.body.done;
 
     user.save(function(err){
+
       if(err) console.log(err);
       console.log("Edited Todo Saved to User!!!");
+      res.json(user);
     });
-    res.json(user);
+
   });
 });
 
@@ -98,34 +79,14 @@ router.delete('/delete/:userid/:id', function(req, res){
 
     var todoIndex = findTodoIndex(todoId, user.todoList);
     user.todoList.splice(todoIndex, 1);
-// user.todoList[todoIndex].description = req.body.todo.description
     user.save(function(err){
+
       if(err) console.log(err);
       console.log("Todo deleted from User");
+      res.json(user);
     });
 
-    res.json(user);
   });
-
 });
-
-// // Deleting a done todo
-// router.delete('/done-todo/:id', function(req, res){
-//   User.findOne({
-//     username: req.user.username
-//   }, function(err, user){
-//     console.log("CURRENT DONE ITEM ID", req.params.id);
-//     var todoIndex = findTodoIndex(req.params.id, user.done);
-//     console.log("TODO INDEX", todoIndex);
-//     user.done.splice(todoIndex, 1);
-//
-//     user.save(function(err){
-//       if(err) console.log(err);
-//       console.log("Todo deleted from Done");
-//     });
-//
-//     res.json(user);
-//   });
-// });
 
 module.exports = router;

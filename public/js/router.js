@@ -13,12 +13,6 @@
     url: '/',
     templateUrl: "/partials/home.html",
   })
-  // .state('done', {
-  //   url: '/done',
-  //   templateUrl: "/partials/done.html",
-  //   controller: 'MainCtrl',
-  //   controllerAs: 'main'
-  // })
   .state('add', {
     url: '/add',
     templateUrl: "/partials/add.html",
@@ -28,7 +22,7 @@
   .state('edit', {
     url: '/edit',
     params: {
-      item: null
+      todo: null
     },
     templateUrl: "/partials/edit.html",
     controller: 'MainCtrl',

@@ -1,4 +1,4 @@
-<div class="home" id="edit" ng-repeat="todo in main.todos">
+<div class="home" ng-repeat="todo in main.todos">
   <h2 id="font1">EDIT</h2>
   <form ng-submit="main.addTodo(newTodo)" method="put">
     <input ng-model="todo.description" type="text" name="description" value="todo" placeholder="todo"><br><br>
