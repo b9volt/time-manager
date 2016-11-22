@@ -1,4 +1,3 @@
-
 //function finds the index of an item in the todoList and returns it
 var findTodoIndex = function(id, todo){
   console.log("TODO ID", id);

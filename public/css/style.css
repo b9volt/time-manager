@@ -24,7 +24,7 @@ body,*/
 }
 
 header {
-  background-color: #222;
+  background-color: #0c0c0e;
   height: 130px;
   color: white;
   padding: 1em;
@@ -110,7 +110,7 @@ h2, #font2 {
 }
 
 footer {
-	background: #222;
+	background: #0c0c0e;
   color: white;
 	text-align: center;
   height: 4em;
